@@ -65,7 +65,7 @@ jobs:
         run: pnpm i
 
       - name: Build the app
-        run: pnpm build
+        run: BASE_URL="/it-tools/" pnpm build
 
       - name: Zip the app
         run: zip -r it-tools-${{ env.RELEASE_VERSION }}.zip dist/*
