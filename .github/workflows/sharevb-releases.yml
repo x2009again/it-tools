@@ -65,9 +65,9 @@ jobs:
             sharevb/it-tools:latest
             sharevb/it-tools:stable
             sharevb/it-tools:${{ env.RELEASE_VERSION}}
-            ghcr.io/sharevb/it-tools:latest
-            ghcr.io/sharevb/it-tools:stable
-            ghcr.io/sharevb/it-tools:${{ env.RELEASE_VERSION}}
+            ghcr.io/x2009again/it-tools:latest
+            ghcr.io/x2009again/it-tools:stable
+            ghcr.io/x2009again/it-tools:${{ env.RELEASE_VERSION}}
 
   github-release:
     runs-on: ubuntu-latest
@@ -95,7 +95,7 @@ jobs:
         run: pnpm i --ignore-scripts
 
       - name: Build the app
-        run: pnpm build
+        run: BASE_URL=/"it-tools/" pnpm build
 
       - name: Zip the app
         run: zip -r it-tools-${{ env.RELEASE_VERSION }}.zip dist/*
