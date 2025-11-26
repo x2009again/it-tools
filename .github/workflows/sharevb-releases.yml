@@ -36,8 +36,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/sharevb/it-tools:latest
-            ghcr.io/sharevb/it-tools:${{ env.RELEASE_VERSION}}
+            ghcr.io/x2009again/it-tools:latest
+            ghcr.io/x2009again/it-tools:${{ env.RELEASE_VERSION}}
 
   github-release:
     runs-on: ubuntu-latest
