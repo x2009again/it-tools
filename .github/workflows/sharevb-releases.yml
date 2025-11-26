@@ -50,9 +50,9 @@ jobs:
             sharevb/it-tools:baseurl-it-tools
             sharevb/it-tools:stable-baseurl-it-tools
             sharevb/it-tools:${{ env.RELEASE_VERSION}}-baseurl-it-tools
-            ghcr.io/sharevb/it-tools:baseurl-it-tools
-            ghcr.io/sharevb/it-tools:stable-baseurl-it-tools
-            ghcr.io/sharevb/it-tools:${{ env.RELEASE_VERSION}}-baseurl-it-tools
+            ghcr.io/x2009again/it-tools:baseurl-it-tools
+            ghcr.io/x2009again/it-tools:stable-baseurl-it-tools
+            ghcr.io/x2009again/it-tools:${{ env.RELEASE_VERSION}}-baseurl-it-tools
 
       - name: Build and push
         uses: docker/build-push-action@v5
@@ -125,9 +125,9 @@ jobs:
               - `sharevb/it-tools:${{ env.RELEASE_VERSION}}`
 
             - GitHub Container Registry
-              - `ghcr.io/sharevb/it-tools:latest`
-              - `ghcr.io/sharevb/it-tools:stable`
-              - `ghcr.io/sharevb/it-tools:${{ env.RELEASE_VERSION}}`
+              - `ghcr.io/x2009again/it-tools:latest`
+              - `ghcr.io/x2009again/it-tools:stable`
+              - `ghcr.io/x2009again/it-tools:${{ env.RELEASE_VERSION}}`
 
             ## Changelog
 
