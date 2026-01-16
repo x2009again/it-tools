@@ -22,6 +22,10 @@ export function useJsonSchemaValidation({ json, schemaUrl, schemaData }: { json:
   });
 
   watch([schemaUrl, schemaData].filter(isRef), async () => {
+    if (get(schemaUrl) === '') {
+      schema.value = null;
+      errors.value = [];
+    }
     if (get(schemaUrl) === 'custom') {
       try {
         schema.value = JSON.parse(get(schemaData)) as Schema;
@@ -54,9 +58,14 @@ export function useJsonSchemaValidation({ json, schemaUrl, schemaData }: { json:
       errors.value = [];
       return;
     }
-    const validator = new Validator();
-    const validationResult = validator.validate(JSON.parse(jsonValue), schemaValue);
-    errors.value = validationResult.errors.map(error => error.stack ?? '');
+    try {
+      const validator = new Validator();
+      const validationResult = validator.validate(JSON.parseBigNum(jsonValue), schemaValue);
+      errors.value = validationResult.errors.map(error => error.stack ?? '');
+    }
+    catch (e: any) {
+      errors.value = [`JSON validation error:${e.toString()}`];
+    }
   }, { immediate: true });
 
   return { schemas, errors };

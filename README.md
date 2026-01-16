@@ -2,7 +2,9 @@
 
 Since the *base image* is now `nginx-unpriviledged` the container will now listen to port **8080** and not 80. So you need to update your port mapping, i.e. from `8080:80` to `8080:8080`.
 
-If the container needs to listen to IPv6, it needs to be enabled: https://serverfault.com/questions/1147296/how-to-enable-ipv6-on-ubuntu-20-04. Alternatively, you can mount your own `nginx.conf` own using docker option `-v "./nginx.conf:/etc/nginx/conf.d/nginx.conf"` (with `listen [::]:8080;` removed)
+You can override listening port using environment variable `PORT` (docker option `-e PORT=8888`).
+
+If the container needs to listen to IPv6, it needs to be enabled: https://serverfault.com/questions/1147296/how-to-enable-ipv6-on-ubuntu-20-04. Alternatively, you can mount your own `nginx.conf` own using docker option `-v "./nginx.conf:/etc/nginx/templates/default.conf.template"` (with `listen [::]:8080;` removed)
 
 ## PR Welcome
 
@@ -43,7 +45,12 @@ Use of WSL2 is recommended to develop using VSCode on Windows. Direct developmen
 
 ## Added features
 
-Almost [all tools PR of it-tools](https://github.com/sharevb/it-tools/pulls).
+- Almost [all tools PR, 192 of mine, of original it-tools](https://github.com/CorentinTh/it-tools/pulls)
+- 95% of [issues if original it-tools](https://github.com/CorentinTh/it-tools/issues)
+- Full UI translation in many language (Google Translated)
+- Many [new tools](https://sharevb-it-tools.vercel.app/about)
+- Many bug fixes and enhancements
+- Many customizations (Docker version), see below
 
 ## Container images
 
@@ -100,7 +107,34 @@ You can filter available tools by mounting `tools-filter.json` in `/usr/share/ng
 ```
 Category matches on category (English) names ; Tools matches on tools path/url.
 
-See (docker-tools-filter-and-home-content)[https://github.com/sharevb/it-tools]
+See [docker-tools-filter-and-home-content](https://github.com/sharevb/it-tools)
+
+## Add custom external tools
+
+You can add custom external tools (href or markdownContent) by mounting a `external-tools.json` in `/usr/share/nginx/html` with the following structure:
+
+```json
+[
+  {
+    "name": "GitHub",
+    "path": "/github",
+    "description": "Link to Github",
+    "keywords": ["github"],
+    "category": "Links",
+    "href": "https://github.com"
+  },
+  {
+    "name": "Some text",
+    "path": "/some-text",
+    "description": "Some description",
+    "keywords": ["some"],
+    "category": "Links",
+    "markdownContent": "Some useful **text**\n\nin *markdown*"
+  }
+]
+```
+
+See [docker-tools-filter-and-home-content](https://github.com/sharevb/it-tools)
 
 ## Setting default tools parameters / default UI language at runtime
 
@@ -173,9 +207,11 @@ So you would need to put another server in front of it, like [Nginx Proxy Manage
 
 For `/it-tools/` subfolder, you can use `baseurl-it-tools` tag.
 
-See [sample of docker-compose.yml and nginx.conf](https://github.com/sharevb/it-tools/docker-subfolder-sample), this docker image needs to have another reverse proxy in front of it, like [Nginx Proxy Manager](https://nginxproxymanager.com/), [Traefik](https://traefik.io/traefik/), [caddy](https://caddyserver.com/) etc. 
+See [sample of docker-compose.yml and nginx.conf](https://github.com/sharevb/it-tools/tree/chore/all-my-stuffs/docker-subfolder-sample), this docker image needs to have another reverse proxy in front of it, like [Nginx Proxy Manager](https://nginxproxymanager.com/), [Traefik](https://traefik.io/traefik/), [caddy](https://caddyserver.com/) etc. 
 
 Setup a reverse proxy pass using `/it-tools/`. And you should be able to access it-tools in `/it-tools/` of your server.
+
+An example of nginx reverse proxy configuration is available at: https://github.com/sharevb/it-tools/tree/chore/all-my-stuffs/docker-subfolder-sample
 
 To run the sample:
 
@@ -195,7 +231,7 @@ Then navigate to http://localhost:8080/it-tools/
 ## To build for GitHub Pages:
 
 1. Enable GitHub Pages build and deployment option in your fork, under **Settings** > **Pages** and select **GitHub Actions** as the source
-2. Add the following GitHub action to your repo: https://github.com/sharevb/it-tools/.github/workflows/sharevb-github-pages-publish.yml
+2. Add the following GitHub action to your repo: https://github.com/sharevb/it-tools/tree/chore/all-my-stuffs/.github/workflows/sharevb-github-pages-publish.yml
 
 ## To add authentication
 
@@ -206,9 +242,18 @@ Assuming you're already hosting it-tools behind a reverse proxy, you can configu
 
 (thanks @jogerj)
 
+## Deploy as LXC container
+
+In Proxmox VE, you can use docker image directly:
+```bash
+sudo lxc-create -n sharevb-it-tools -t oci -- --url docker://ghcr.io/sharevb/it-tools:latest
+```
+
 ## Contribute
 
 ### Recommended IDE Setup
+
+To install VSCode in WSL2 (Windows), see: https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode
 
 [VSCode](https://code.visualstudio.com/) with the following extensions:
 
@@ -271,6 +316,14 @@ pnpm test
 pnpm lint
 ```
 
+### Ensure CI (lock, eslint, typecheck) will succeed
+
+Before submitting a PR, run:
+
+```sh
+pnpm install --ignore-scripts && pnpm lint --fix && pnpm typecheck
+```
+
 ### Create a new tool
 
 To create a new tool, there is a script that generate the boilerplate of the new tool, simply run:
@@ -279,7 +332,7 @@ To create a new tool, there is a script that generate the boilerplate of the new
 pnpm run script:create:tool my-tool-name
 ```
 
-It will create a directory in `src/tools` with the correct files, and a the import in `src/tools/index.ts`. You will just need to add the imported tool in the proper category and develop the tool.
+It will create a directory in `src/tools` with the correct files. You will need to fill `src/tools/_my-tool-name_/index.ts` with tool name, category, description... and then develop the tool.
 
 ## Installation methods
 

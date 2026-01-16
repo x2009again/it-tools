@@ -261,8 +261,14 @@ tools:
       placeholder-your-string-to-compare: Din streng at sammenligne...
       label-your-hash: "Din hash:"
       placeholder-your-hash-to-compare: Din sammenligningsmetode...
-      label-do-they-match: Matcher de?
       tag-copy-hash: Kopiér hash
+      hashed-string: Hashede strenge
+      comparison-result: Sammenligningsresultat
+      matched: Matchet
+      no-match: Ingen match
+      timed-out-after-timeout-period: Timeout efter {timeoutPeriod}
+      hashed-in-elapsed-period: Hashede i {elapsedPeriod}
+      compared-in-elapsed-period: Sammenlignet i {elapsedPeriod}
   crontab-generator:
     title: Crontab generator
     description: Validér og generer crontab og få den menneske-læselige beskrivelse
@@ -793,6 +799,7 @@ tools:
       label-your-url-to-parse: "Din url til parsing:"
       placeholder-your-url-to-parse: Din url til parsing...
       url-must-have-http-or-https-prefix: URL'en skal have præfikset http:// eller https://
+      button-open-url: Åbn URL
   iban-validator-and-parser:
     title: IBAN validator og fortolker
     description: Valider og fortolk IBAN-numre. Tjek om en IBAN er gyldig og få
@@ -863,6 +870,9 @@ tools:
       placeholder-your-string: Din streng...
       label-cleaning-regex: "Rengøringsregeks:"
       placeholder-your-cleaning-regex: Din rengøringsregel...
+      label-titlecase: "Titelbog:"
+      label-spongecase: "Svampeæske:"
+      label-swapcase: "Byttekasse:"
   html-entities:
     title: Undslip HTML
     description: Undslip og omvendt HTML (erstat tegn som <, >, &, " og \' med deres
@@ -946,6 +956,7 @@ tools:
       placeholder-your-lorem-ipsum: Din lorem ipsum...
       tag-copy: Kopi
       tag-refresh: Opfriske
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: Udskriv (dvs. brug en PDF-printer til at få en PDF-fil)
   qrcode-generator:
     title: QR kode generator
     description: Generer og download en QR kode til en URL (eller bare almindelig
@@ -1032,6 +1043,7 @@ tools:
       tag-hey: Hej!
       tag-welcome-to-this-html-wysiwyg-editor: Velkommen til denne html wysiwyg-editor
       tag-click-here-to-paste-or-edit-raw-html: Klik her for at indsætte eller redigere rå html
+      label-xhtmlfy: "XHtml:"
   yaml-to-toml:
     title: YAML til TOML
     description: Fortolk og konverter YAML til TOML.
@@ -1077,6 +1089,13 @@ tools:
       label-secret-or-public-key-spki-or-jwk: Hemmelig eller offentlig nøgle (SPKI eller JWK)
       placeholder-put-your-secret-or-public-key-here: Indsæt din hemmelige eller offentlige nøgle her...
       tag-signature-verified: Underskrift bekræftet
+      label-jwk: JWK-nøgle
+      label-pub-key: PEM offentlig nøgle
+      label-secret-raw-text: Hemmelighed - Rå tekst
+      label-secret-hex-array: Hemmelighed - Hex-array
+      label-secret-base64: Hemmelighed - Base64
+      label-secret-encoding: "Hemmelig kodning/type:"
+      key-or-secret-or-verification-error-e-tostring: "Nøgle-, hemmeligheds- eller verifikationsfejl: {0}"
     constants:
       text:
         token-introspection-response: Token introspektionsrespons
@@ -1844,6 +1863,7 @@ tools:
       tag-: "', '"
       tag-copy-html-formatted: Kopiér HTML-formateret
       tag-copy-code-text: Kopiér kodetekst
+      tag-copy-html-word: Kopiér til HTML/Rich Text i Word
   coin-flipper:
     title: Møntflipper
     description: Kast en mønt
@@ -2247,9 +2267,8 @@ tools:
       tag-detach-d: Afriv (-d)
       tag-remove-rm: Fjern (--rm)
       tag-long-arguments: Lange argumenter
-      tag-: "?"
-      tag-arg: argument
-      tag-value: værdi
+      tag-multiline: Multilinje
+      tag-equal-sep: --arg=værdi
   docker-compose-to-kubernetes:
     title: Docker-skrivning til Kubernetes
     description: Docker Compose til Kubernetes manifester
@@ -2559,6 +2578,14 @@ tools:
       placeholder-your-html-content: Dit HTML-indhold...
       label-your-html-to-convert-can-paste-from-clipboard: "Din HTML-fil, der skal konverteres (kan indsættes fra udklipsholderen):"
       label-output-markdown: "Nedsættelse af output:"
+      label-heading-style: "Overskriftsstil:"
+      label-emphasis-style: "Fremhævelsesstil:"
+      label-hash: Hashtag (#)
+      label-underline: Understreg (=/-)
+      label-surround-heading: Omkring (= Overskrift =)
+      label-asterisk: Stjerne (*)
+      label-underscore: Understregning (_)
+      label-tilde: Tilde (~)
   ical-parser:
     title: ICAL-filparser
     description: Parse ICAL/ICS-fil til hændelsesvisning
@@ -2835,6 +2862,15 @@ tools:
     texts:
       label-current-selected-node-jsonpath: "Aktuelt valgte node JSONPath:"
       label-your-edited-json: "Din redigerede JSON:"
+      title-the-following-errors-occured: Følgende fejl opstod
+      tag-validation-successful: Validering vellykket!
+      label-no-validation: Ingen validering
+      label-custom: Skik
+      label-json-schema: "JSON-skema:"
+      placeholder-paste-your-json-schema-here: Indsæt dit JSON-skema her...
+      title-schema-validation-errors: Fejl ved skemavalidering
+      label-indent-size-0-compact: "Indrykningsstørrelse (0 = Kompakt):"
+      repair-json: Reparer JSON
   json-escaper:
     title: Json Escaper/Unescaper
     description: Escape og unescape JSON-streng
@@ -2862,6 +2898,8 @@ tools:
       title-schema-validation-errors: Fejl ved skemavalidering
       title-formatted-version: Formateret version
       label-indent-size-0-compact: "Indrykningsstørrelse (0 = Kompakt):"
+      title-repaired-version: Autorepareret og formateret version
+      label-auto-repair-json: "Bilreparations-JSON:"
   json-size-analyzer:
     title: Json-størrelsesanalysator
     description: Mål JSON-noders relative vægte
@@ -2967,6 +3005,17 @@ tools:
       label-public-key-jwk: "Offentlig nøgle (JWK):"
       label-private-key-jwk: "Privat nøgle (JWK):"
       title-generated-jwt-token: "Genereret JWT-token:"
+      label-secret-encoding: "Hemmelig kodning:"
+      label-raw-text: Rå tekst
+      label-hex-array: Hex-array
+      verify-description: "{0}: {1} (bekræft med {2})"
+      token-secret: Token-hemmelighed
+      token-keys: Tokennøgler
+      cannot-parse-secret-as-encoding: "Kan ikke parse '{0}' som '{1}': {2}"
+      invalid-base64-string: Ugyldig Base64-streng
+      placeholder-input-token: Indsæt din JWT-token for at redigere...
+      click-to-input-a-existing-jwt-token-to-modify: Klik for at indtaste et eksisterende JWT-token for at ændre det
+      label-base64: Base64
   length-converter:
     title: Længdeenhedskonverter
     description: Konverter værdier fra længdeenheder
@@ -3025,6 +3074,8 @@ tools:
       placeholder-select-the-target-unit: Vælg målenheden
       title-result: Resultat
       label-best-target-unit: Bedste målenhed
+      label-selected-target-unit-outputunit: Valgt målenhed ({0})
+      title-other-units-conversion-tools: Andre værktøjer til enhedskonvertering
   markdown-cheatsheet:
     title: Markdown-snydeark
     description: Markdown-snydeark
@@ -4837,6 +4888,8 @@ tools:
       message-this-date-is-invalid-for-this-format: Denne dato er ugyldig for dette format
       placeholder-put-your-date-string-here: Sæt din dato her...
       placeholder-invalid-date: Ugyldig dato...
+      button-add-timezone: Tilføj tidszone
+      placeholder-select-timezone: Vælg en tidszone...
   extract-text-from-html:
     texts:
       message-provided-html-is-not-valid: Den angivne HTML er ikke gyldig.
@@ -5579,6 +5632,8 @@ tools:
       label-merged-ical: Sammenflettede ICAL
       tag-delete: Slet
       tag-merge-ical-files: Flet iCal-filer
+      file-to-merge-file-name: "Fil der skal flettes: {0}"
+      download-merged-ical: Download fusioneret iCal
     service:
       text:
         no-icals-parsed-successfully: Ingen icals blev parset
@@ -5640,6 +5695,12 @@ tools:
       heading-1: Overskrift 1
       inline-code: Inline-kode
       strike: Strejke
+      heading-5: Overskrift 5
+      text-left: Juster til venstre
+      text-center: Juster center
+      text-right: Juster til højre
+      text-justify: Juster/Færdiggør
+      clear-align: Ryd justering
   unicode-formatter:
     title: Unicode-formatering
     description: Formatér tekst ved hjælp af Unicode-skrifttyper
@@ -5838,6 +5899,7 @@ tools:
       label-json-schema: "JSON-skema:"
       placeholder-paste-your-json-schema-here: Indsæt dit JSON-skema her...
       title-schema-validation-errors: Fejl ved skemavalidering
+      label-unescape-json-string: "Unescape JSON-streng:"
     text:
       provided-json-is-not-valid: Forudsat at JSON ikke er gyldig.
       try-again-with-repairjsonlabel: Prøv igen med "{0}"
@@ -6995,6 +7057,592 @@ tools:
       label-converted-to-hex-array: "Konverteret til hexadecimalt array:"
       tag-digit-0-no-grouping: (Ciffer 0 = Ingen gruppering)
       tag-digit-0-no-row: (Ciffer 0 = Ingen række)
+  toon-to-json:
+    texts:
+      message-provided-json-is-not-valid: Den angivne TOON er ikke gyldig
+      output-label-json-version: "JSON-version af dit TOON-indhold:"
+      input-placeholder-paste-your-raw-toon-here: Indsæt dit rå TOON-indhold her...
+      input-label-your-raw-toon: "Dit rå TOON-indhold:"
+    title: TOON til JSON
+    description: Konverter TOON-repræsentation til JSON-objekt til LLM-brug
+  json-to-toon:
+    texts:
+      message-provided-json-is-not-valid: Forudsat at JSON ikke er gyldig.
+      input-placeholder-paste-your-raw-json-here: Indsæt din rå JSON her...
+      input-label-your-raw-json: "Din rå JSON:"
+      output-label-toon-version-of-your-json: "TOON-version af din JSON:"
+    title: JSON til TOON
+    description: Konvertér JSON-objekt til TOON-repræsentation til LLM/GPT-brug
+  external-link-goto: "For at åbne dette værktøj skal du følge dette link:"
+  argon2-hash:
+    title: Argon2 Hasher
+    description: Beregn Argon2 hashes med parametre
+    texts:
+      label-argon2id: Argon2id
+      label-argon2i: Argon2i
+      label-argon2d: Argon2d
+      label-hex: Hex
+      label-encoded: Kodet
+      label-binary: Binær
+      label-algorithm: "Algoritme:"
+      label-password: "Adgangskode:"
+      placeholder-enter-password: Indtast adgangskode
+      label-salt-hex: "Salt (hex):"
+      placeholder-optional-hex-salt: Valgfrit hex-salt
+      label-iterations: "Iterationer:"
+      label-memory-kib: "Hukommelse (KiB):"
+      label-parallelism: "Parallelisme:"
+      label-hash-length: "Hash-længde:"
+      label-output-type: "Udgangstype:"
+      title-argon2-hash: Argon2 Hash
+      tag-generate: Frembringe
+  binary-calculator:
+    title: Binær lommeregner
+    description: Beregn bitvise/binære operationer (OG, ELLER, XELLER, IKKE,
+      forskydninger) mellem to tal
+    texts:
+      label-decimal: Decimaltal
+      label-hexadecimal: "Hexadecimal:"
+      label-octal: "Oktal:"
+      label-binary: "Binær:"
+      label-a-and-b: A OG B
+      label-a-or-b: A ELLER B
+      label-a-xor-b: A XOR B
+      label-not-a: IKKE EN
+      label-a-b-left-shift: A << B (Venstre Shift)
+      label-a-b-right-shift: A >> B (Højre Shift)
+      message-number-is-invalid: Nummeret er ugyldigt
+      label-a: A=
+      placeholder-enter-a: Indtast A
+      label-b: B=
+      placeholder-enter-b: Indtast B
+      label-operation: "Operation:"
+      placeholder-select-operation: Vælg handling
+      title-result: Resultat
+      label-decimal-signed: "Decimal (med fortegn):"
+      label-decimal-unigned: "Decimal (usigneret):"
+      title-bitmask: Bitmaske
+  chmod-memo:
+    title: chmod-kommando-snydeark
+    description: Cheatsheets til ændringer i Linux-tilladelser
+  css-gradient-generator:
+    title: CSS Gradientgenerator
+    description: Generer CSS Gradient CSS-kode for et givet sæt trin og farver
+    texts:
+      label-gradient-type: "Gradienttype:"
+      label-angle-degrees: "Vinkel (grader):"
+      title-color-stops: Farvestop
+      title-preview: Forhåndsvisning
+      title-generated-css: Genereret CSS
+      tag-linear: Lineær
+      tag-radial: Radial
+      tag-remove: Fjerne
+      tag-add-color-stop: Tilføj farvestop
+  css-units-converter:
+    title: CSS-enhedskonverter
+    description: Konverter værdier fra almindelige CSS-enheder (em, rem, px, vw, vh, %)
+    texts:
+      label-pixels-px: Pixels (px)
+      label-ems-em: Ems (em)
+      label-rems-rem: Rems (rem)
+      label-percent: Procent (%)
+      label-viewport-width-vw: Viewport-bredde (vw)
+      label-viewport-height-vh: Viewporthøjde (vh)
+      label-value-to-convert: "Værdi at konvertere:"
+      label-from-unit: "Fra enhed:"
+      label-to-unit: "Til enhed:"
+      label-base-font-size-px: Basisskriftstørrelse (px)
+      label-viewport-width-px: Viewport-bredde (px)
+      label-viewport-height-px: Viewporthøjde (px)
+      title-conversion: Omdannelse
+      label-converted-value: "Konverteret værdi:"
+  docker-compose-to-env-file:
+    title: Docker Compose til .env-fil
+    description: Udpak .env-fil fra en eksisterende Docker Compose-fil
+    texts:
+      label-docker-compose-file: "Docker Compose-fil:"
+      placeholder-paste-your-docker-compose-yaml-here: Indsæt din docker-compose YAML her...
+      title-extract-env: Udpak .env
+  emv-tlv-decoder:
+    title: EMV TLV-dekoder
+    description: Afkoder EMV TLV (tag-length-value) dataene og dets individuelle
+      tags med udvidet betydning (såsom TVR (Tag 95), Terminalfunktioner (Tag
+      9F33) osv.)
+    texts:
+      tag-: —
+      tag-tag: Tag
+      tag-length: Længde
+      tag-value: Værdi
+      tag-description: Beskrivelse
+      tag-bit-level-interpretation: Bitniveaufortolkning
+      label-tlv-hex-input: TLV Hex-input
+      placeholder-paste-emv-tlv-hex-string-e-g-6f1a8407a0000000031010a50f500b5649534120435245444954:
+        Indsæt EMV TLV hex-streng (f.eks.
+        6F1A8407A0000000031010A50F500B5649534120435245444954)
+      label-kernel-type: "Kernetype:"
+      title-decoded-emv-tags: Afkodede EMV-tags
+      tag-parse-tlv: Parse TLV
+  eth-transaction-decoder:
+    title: ETH-transaktionsdekoder
+    description: Ethereum-transaktionsdekoder med Smart Contract ABI
+    texts:
+      label-smart-contract-abi: "Smart kontrakt ABI:"
+      placeholder-paste-abi-json-here: Indsæt ABI JSON her
+      label-raw-transaction-0x-or-json-transaction: "Rå transaktion (0x...) eller JSON-transaktion:"
+      title-decoded-transaction: Afkodet transaktion
+      label-from: Fra
+      label-to: Til
+      label-value: Værdi
+      label-gas: Gas
+      label-gas-price: Benzinpris
+      label-nonce: Nonce
+      label-method: Metode
+      label-signature: Signatur
+      label-arguments: Argumenter
+      title-structured-output-json: Struktureret output JSON
+      placeholder-quot-to-quot-quot-0x-quot-quot-data-quot-quot-0x-quot-or-raw-0x: "{'{'}\"til\":\"0x...\",\"data\":\"0x...\"{'}'} eller rå 0x...."
+  file-splitter:
+    title: Fildeler
+    description: Opdel JSON-, XML- eller tekstfil enten efter gruppe af noder eller
+      efter gruppe af linjer
+    texts:
+      placeholder-strategy-value: Strategiværdi...
+      title-drag-and-drop-a-txt-json-or-xml-file-here-or-click-to-select-a-file:
+        Træk og slip en TXT-, JSON- eller XML-fil hertil, eller klik for at
+        vælge en fil
+      tag-split-by-lines: Opdelt efter linjer
+      tag-split-by-nodes: Opdelt efter noder
+      tag-max-chunk-size-kb: "Maksimal chunkstørrelse (KB):"
+      tag-fixed-count: "Fast antal:"
+      tag-chunk-count: "Antal stykker:"
+      tag-preview-chunks: Forhåndsvisning af bidder?
+      tag-process-chunks: Processtykker
+      tag-download-all: Download alle
+      tag-download: Download
+  gitignore-generator:
+    title: GitIgnore-generator
+    description: Generer .gitignore til et sæt almindelige skabeloner
+    texts:
+      placeholder-select-templates-e-g-node-python-vue: Vælg skabeloner (f.eks. node, python, vue)
+      title-gitignore: .gitignore
+      tag-generate: Frembringe
+  i-and-l-checker:
+    title: I og L Checker
+    description: Tjek en adgangskode eller tekst med fremhævning af 1, l, I, 0, O
+    texts:
+      label-text-to-check: "Tekst til kontrol:"
+      placeholder-paste-your-text-here: Indsæt din tekst her...
+      title-legend: Legende
+      tag-i: jeg
+      tag-uppercase-letter-i: "- Stort bogstav i"
+      tag-l: l
+      tag-lowercase-letter-l: "- Lille bogstav L"
+      tag-1: "1"
+      tag-number-1: "- Nummer 1"
+      tag-0: "0"
+      tag-number-0: "- Nummer 0"
+      tag-o: DE
+      tag-uppercase-letter-o: "- Stort bogstav O"
+  ipv4-subnets-list:
+    title: IPv4-undernetliste
+    description: Liste over alle mulige undernet for en given CIDR
+    texts:
+      message-we-cannot-parse-this-address-check-the-format: Vi kan ikke analysere denne adresse. Kontroller formatet.
+      label-an-ipv4-address-with-or-without-mask-cidr-ip-range-wildcard-ip-ip-mask:
+        En IPv4-adresse med eller uden maske
+        (CIDR/IP-område/Wildcard-IP/IP-maske)
+      placeholder-ipv4-or-cidr: IPv4 eller Cidr...
+      tag-network: Netværk
+      tag-first-ip: Første IP-adresse
+      tag-last-ip: Sidste IP-adresse
+      tag-broadcast: Udsende
+  json-to-msgpack:
+    title: JSON til MessagePack
+    description: Konvertér JSON til MessagePack
+    texts:
+      message-json-is-invalid: JSON er ugyldig
+      label-output-filename: "Navn på outputfil:"
+      placeholder-enter-output-filename: Indtast outputfilnavn
+      label-json-to-convert: "JSON til at konvertere:"
+      placeholder-enter-json-to-convert: Indtast JSON for at konvertere...
+      title-msgpack-binary: "MsgPack binær:"
+      tag-convert: Konvertere
+      tag-download-msgpack-file: Download MsgPack-filen
+  markdown-lorem-ipsum:
+    title: Markdown Lorem Ipsum
+    description: Generer Lorem Ipsum i markdown
+    texts:
+      label-atx: "ATX (#, ##, ###)"
+      label-setext: Setekst (====, ----)
+      label-unordered: Uordnet (-, *, +)
+      label-ordered-1-2-3: Bestilt (1., 2., 3.)
+      label-language: "Sprog:"
+      label-blocks: "Blokke:"
+      label-sentences-per-paragraph: "Sætninger pr. afsnit:"
+      title-styles: Stilarter
+      label-block-types: "Bloktyper:"
+      label-inline-styles: Indlejrede stilarter
+      label-header-style: "Overskriftsstil:"
+      label-list-style: "Listestil:"
+      title-block-frequencies: Blokfrekvenser
+      label-headers: "Overskrifter:"
+      label-lists: "Lister:"
+      label-code: "Kode:"
+      label-quotes: "Citater:"
+      title-generated-markdown: Genereret nedsættelse
+      tag-headers: Overskrifter
+      tag-lists: Lister
+      tag-code: Kode
+      tag-quotes: Citater
+      tag-emphasis: Vægt
+      tag-strong: Stærk
+      tag-links: Links
+      tag-inline-code: Inline-kode
+      tag-generate: Frembringe
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: Udskriv (dvs. brug en PDF-printer til at få en PDF-fil)
+  msgpack-to-json:
+    title: Meddelelsespakke til JSON
+    description: Konverter MessagePack-fil til JSON
+    texts:
+      title-input-message-pack-file-or-content: Input Message Pack-fil eller indhold
+      label-file: Fil
+      label-hex-content: "Hex-indhold:"
+      title-drag-and-drop-msgpack-file-here-or-click-to-select-a-file: Træk og slip MsgPack-filen hertil, eller klik for at vælge en fil
+      title-json-content: JSON-indhold
+  pdf-compressor:
+    title: PDF-kompressor
+    description: Optimer og komprimer PDF med Ghostscript
+    texts:
+      label-screen-smallest: Skærm (mindste)
+      label-ebook-balanced: E-bog (balanceret)
+      label-printer-high-quality: Printer (høj kvalitet)
+      label-prepress-best-quality: Prepress (bedste kvalitet)
+      label-pdf-1-4: PDF 1.4
+      label-pdf-1-5: PDF 1.5
+      label-pdf-1-6: PDF 1.6
+      label-pdf-1-7: PDF 1.7
+      label-compression-quality: "Kompressionskvalitet:"
+      placeholder-select-compression-quality: Vælg komprimeringskvalitet
+      label-compatibility-level: "Kompatibilitetsniveau:"
+      placeholder-select-compatibility-level: Vælg kompatibilitetsniveau
+      title-drag-and-drop-a-pdf-file-here-or-click-to-select-a-file: Træk og slip en PDF-fil hertil, eller klik for at vælge en fil
+      title-logs: Logfiler
+      label-ghostscript: Ghostscript
+  serial-console:
+    title: Seriel portkonsol
+    description: Tilslut, læs og send besked til seriel port
+    texts:
+      label-9600: "9600"
+      label-19200: "19200"
+      label-38400: "38400"
+      label-57600: "57600"
+      label-115200: "115200"
+      label-lf-n: LF (\\n)
+      label-cr-r: CR (\\r)
+      label-crlf-r-n: CRLF (\\r\\n)
+      title-serial-terminal: Seriel terminal
+      placeholder-baud-rate: Baudhastighed
+      placeholder-line-ending: Linjeafslutning
+      placeholder-select-port: Vælg port
+      placeholder-type-a-command: Skriv en kommando...
+      tag-connect: Forbinde
+      tag-disconnect: Afbryde
+      tag-send: Sende
+  shamirs-secret-sharing:
+    title: Shamirs hemmelige deling
+    description: Tillad deling og omskrivning af en hemmelighed ved hjælp af Shamir\
+    texts:
+      label-text: Tekst
+      label-hexadecimal: Hexadecimal
+      label-base64: Base64
+      label-secret-mode: "Hemmelig tilstand:"
+      title-share-a-secret-split: Del en hemmelighed (del)
+      label-secret: "Hemmelighed:"
+      placeholder-enter-secret-text: Indtast hemmelig tekst
+      label-threshold-minimum-shares-to-recover: "Tærskel (minimum antal andele, der skal genvindes):"
+      label-number-of-shares: "Antal aktier:"
+      title-generated-shares: Genererede delinger
+      title-recombine-a-secret: Rekombinér en hemmelighed
+      label-your-shares: "Dine delinger:"
+      placeholder-paste-your-shares-here: Indsæt dine delinger her...
+      title-recombined-secret: Rekombineret hemmelighed
+      tag-split-secret: Opdel hemmelighed
+      tag-recombine: Rekombinér
+  short-urls-expander:
+    title: Udvider af korte URL'er
+    description: Udvid korte webadresser for at målrette mod fulde webadresser
+    texts:
+      label-short-urls-to-expand: "Korte URL'er til udvidelse:"
+      placeholder-enter-short-urls-one-per-line: Indtast korte webadresser (én pr. linje)
+      title-result: Resultat
+      tag-expand-all: Udvid alle
+      tag-download-resuls-as-csv: Download resultater som CSV
+      tag-short-url: Kort URL
+      tag-expanded-url: Udvidet URL
+      tag-link: Forbindelse
+      tag-status: Status
+      tag-open-url: Åbn URL
+      cors-anywhere-configuration: CORS Anywhere-konfiguration
+      self-hosted-cors-anywhere: Selvhostet CORS Anywhere
+      this-tools-requires-a-cors-anywhere-instance-to-bypass-cors-policy-you-can-use-a:
+        Dette værktøj kræver en CORS Anywhere-instans for at omgå
+        CORS-politikken. Du kan bruge en
+      put-your-cors-anywhere-instance-url: Indsæt din CORS Anywhere-instans-URL...
+      cors-anywhere-instance-url: "URL til CORS Anywhere-instans:"
+      expanded-url: Udvidet URL
+      short-url: Kort URL
+      failed-to-expand-some-urls: Kunne ikke udvide nogle webadresser.
+      failed: Mislykkedes
+      no-redirect: Ingen omdirigering
+      expanded: Udvidet
+  amortization-calculator:
+    title: Amortiseringsberegner
+    description: Beregn låneafdragsplaner med månedlige betalingsfordelinger
+    footer: Amortiseringsberegner
+    texts:
+      title-loan-parameters: Låneparametre
+      title-overview: Oversigt
+      title-amortization-schedule: Amortiseringsplan
+      label-loan-amount: Lånebeløb
+      label-loan-term: Låneperiode
+      label-interest-rate: Rentesats
+      label-displayed-currency: Vist valuta
+      label-end-of-year: Slutningen af året {year}
+      label-year: År
+      label-month: Måned
+      label-interest: Interesse
+      label-principal: Rektor
+      label-ending-balance: Slutsaldo
+      label-monthly-payment: Månedlig betaling
+      label-total-of-payments: Samlede betalinger
+      label-total-interest: Samlet rente
+      message-loan-amount-must-be-positive: Lånebeløbet skal være en positiv værdi
+      message-loan-term-must-be-positive-integer: Låneperioden skal være et positivt heltal
+      message-interest-rate-must-be-between-1-and-100: Rentesatsen skal være en positiv værdi mellem 0 og 100
+  copy:
+    text:
+      copied-to-the-clipboard: Kopieret til udklipsholderen
+  arpa-decoder:
+    title: ARPA-dekoder
+    description: Afkod IPv4/6 ARPA-adresser eller PTR-poster
+    texts:
+      label-arpa-address: "ARPA-adresse:"
+      placeholder-e-g-10-1-168-192-in-addr-arpa-or-xxxx-ip6-arpa: f.eks. 10.1.168.192.in-addr.arpa. eller xxxx.ip6.arpa.
+  database-builder:
+    title: Databaseoprettelsesværktøj
+    description: Byg SQL CREATE DATABASE-forespørgsler til forskellige databaser
+    texts:
+      label-mysql: MySQL
+      label-postgresql: PostgreSQL
+      label-sql-server: SQL Server
+      label-oracle: Orakel
+      label-sqlite: SQLite
+      label-database-type: "Databasetype:"
+      label-database-name: "Databasenavn:"
+      placeholder-test: prøve
+      label-server-address: "Serveradresse:"
+      placeholder-127-0-0-1: 127.0.0.1
+      label-account: "Konto:"
+      label-password-leave-empty-to-generate: "Adgangskode (lad stå tomt for at generere):"
+      placeholder-leave-empty-for-random: Lad være tomt for tilfældige
+      label-permissions-all-privileges-if-none-selected: "Tilladelser (ALLE PRIVILEGIER hvis ingen er valgt):"
+      title-generated-sql-instructions: "Genererede SQL-instruktioner:"
+      tag-select: VÆLGE
+      tag-insert: INDSÆT
+      tag-update: OPDATERING
+      tag-delete: SLET
+      tag-create: SKABE
+      tag-drop: DRÅBE
+      tag-alter: ÆNDRE
+      tag-index: INDEKS
+      tag-execute: UDFØR
+      tag-references: REFERENCER
+      tag-trigger: UDLØSER
+      tag-usage: BRUG
+      tag-replication-client: REPLIKATIONSKLIENT
+      tag-replication-slave: REPLIKATIONSSLAVE
+      tag-generate-sql-instructions: Generer SQL-instruktioner
+  database-table-generator:
+    title: Databasetabelgenerator
+    description: Generer SQL CREATE TABLE til almindelige databaser
+    texts:
+      label-mysql: MySQL
+      label-postgresql: PostgreSQL
+      label-sqlite: SQLite
+      label-sql-server: SQL Server
+      label-database-type: "Databasetype:"
+      label-database-name: "Databasenavn:"
+      placeholder-enter-database-name: Indtast databasenavn
+      placeholder-table-name: Tabelnavn
+      placeholder-column-name: Kolonnenavn
+      placeholder-default-value: Standardværdi
+      title-generated-sql: Genereret SQL
+      tag-remove-table: Fjern tabel
+      tag-add-column: Tilføj kolonne
+      tag-nullable: Nullable
+      tag-pk: PK
+      tag-unique: Enestående
+      tag-autoinc: AutoInc
+      tag-add-table: Tilføj tabel
+      tag-generate-sql: Generer SQL
+  gitattributes-generator:
+    title: Gitaattributgenerator
+    description: Generer .gitattributes fra den almindelige konfiguration af
+      https://github.com/alexkaratarakis/gitattributes
+    texts:
+      label-gitattributes-templates: "Gitattributes-skabeloner:"
+      placeholder-select-templates: Vælg skabeloner
+      title-preview: Forhåndsvisning
+      tag-fetch-generate: Hent og generer
+  html-to-xhtml:
+    title: HTML til XHTML
+    description: Konverter HTML til strict XHTML (XML-parsbar, selvlukkende tags...)
+    texts:
+      placeholder-your-html-content: Dit HTML-indhold...
+      label-your-html-to-convert-to-xhtml: "Din HTML, der skal konverteres til XHTML:"
+      label-add-xhtml-xmlns: "Tilføj XHTML xmlns:"
+      label-indentation: "Indrykning:"
+      title-output-xhtml: "XHTML-output:"
+  javascript-obfuscator:
+    title: Javascript Obfuscator
+    description: Javascript-kodeforvirring ved hjælp af base64- eller rot13-kodning
+    texts:
+      label-base-64: Basis 64
+      label-rot-13: ROT 13
+      label-obfuscator-io: Obfuscator.io
+      label-your-javascript-code-to-obfuscate: "Din JavaScript-kode, der skal obfusqueres:"
+      label-obfuscation-method: "Forvirringsmetode:"
+      title-obfuscted-js-code: Obfuskteret JS-kode
+      placeholder-enter-your-javascript-code-here: // Indtast din JavaScript-kode her
+  online-wiktionary:
+    title: Online ordbog
+    description: Søg efter ord i Wiktionary
+    texts:
+      label-english: Engelsk
+      label-french: Fransk
+      label-german: Tysk
+      label-spanish: Spansk
+      label-italian: Italiensk
+      label-russian: Russisk
+      label-chinese: kinesisk
+      label-japanese: Japansk
+      label-arabic: Arabisk
+      placeholder-enter-a-word: Indtast et ord…
+      placeholder-select-a-language: Vælg et sprog
+      tag-search-on-wiktionary: Søg på Wiktionary
+      tag-enter-a-word-and-select-a-language-to-load-wiktionary: Indtast et ord og vælg et sprog for at indlæse Wiktionary
+  ptr-dns-generator:
+    title: PTR DNS-generator
+    description: Generer DNS PTR-poster
+    texts:
+      label-ip-address-ipv4-or-ipv6: "IP-adresse (IPv4 eller IPv6):"
+      placeholder-e-g-192-168-1-10-or-2001-db8-1: f.eks. 192.168.1.10 eller 2001:db8::1
+  screen-memo:
+    title: Snydeark til skærmkommandoer
+    description: Skærm Linux-kommandomemo
+  svg-previewer:
+    title: SVG-forhåndsvisning
+    description: Forhåndsvisning af SVG-filer
+    texts:
+      title-upload-a-svg-file: Upload en SVG-fil
+      title-raw-svg-content: "Rå SVG-indhold:"
+      placeholder-paste-raw-svg-content-here: Indsæt råt SVG-indhold her...
+      label-select-background: "Vælg baggrund:"
+      title-svg-preview: SVG-forhåndsvisning
+      tag-const-svgcontent-ref: const svgIndhold = ref
+  tmux-memo:
+    title: Tmux-kommando-snydeark
+    description: Tmux Linux-kommandomemo
+  trigo-viewer:
+    title: Trigonometrisk/ligningskurvevisualisator
+    description: Visualiser trigonometriske ligninger eller ligninger afhængigt af x
+    texts:
+      text-degrees: Grader (°)
+      text-value: Værdi
+      placeholder-enter-equation-in-terms-of-x-e-g-sin-x-cos-2-x: Indtast ligning som form af x (f.eks. sin(x) + cos(2*x))
+      label-equation-in-term-of-x: "Ligning i termen af x:"
+      label-domain: "Domæne:"
+      tag-reset-zoom: Nulstil zoom
+  zellij-memo:
+    title: Zellij-kommando-snydeark
+    description: Zellij Linux-kommandomemo
+  dead-pixel:
+    texts:
+      title-dead-pixel-iframe: død-pixel-iframe
+      tag-: "`;"
+      tag-keyboard-shortcuts: "Tastaturgenveje:"
+      tag-arrow-right-arrow-down-space: Pil til højre, pil ned, mellemrum
+      tag-next-color: Næste farve
+      tag-arrow-left-arrow-up: Pil til venstre, pil op
+      tag-previous-color: Forrige farve
+      tag-esc: ESC
+      tag-exit-dead-pixel-mode: ": Afslut død pixel-tilstand"
+      tag-start-dead-pixel: Start død pixel
+  UnitsConverter:
+    texts:
+      exclude-si-prefixes: Udeluk SI-præfikser
+    text:
+      si-converter: Goto SI-præfikskonverter
+  geo-coordinates-converter:
+    title: Geografiske koordinatkonverter
+    description: Konverter geografiske koordinater mellem WGS84, GCJ02, BD09 og CGCS2000
+    texts:
+      label-latitude: "Breddegrad:"
+      label-longitude: "Længde:"
+      label-csv-content-lng-lat: "CSV-indhold (lang, lat):"
+      placeholder-put-your-longitude-and-latitude-in-this-order-csv-to-convert:
+        Indsæt din længdegrad og breddegrad (i denne rækkefølge) i CSV-format
+        for at konvertere...
+      title-conversion-results: Konverteringsresultater
+      title-notes: Noter
+      tag-wgs84-wsg1984-epsg4326-global-standard: WGS84/WSG1984/EPSG4326 (Global standard)
+      tag-gcj02-amap-gaode-qq-maps: GCJ02/AMap (Gaode, QQ-kort)
+      tag-bd09-bd09ll-bmap-baidu-maps: BD09/BD09LL/BMap (Baidu-kort)
+      tag-bd09mc-bd09meter-baidu-meter: BD09MC/BD09 Meter (Baidu Meter)
+      tag-cgcs2000-china-geodetic-system-2000: CGCS2000 (Kinas geodætiske system 2000)
+      tag-webmercator-epsg3857-epsg900913: WebMercator/EPSG3857/EPSG900913
+      tag-convert-single: Konverter enkelt
+      tag-convert-batch: Konvertér batch
+      tag-longitude-east-is-positive-west-is-negative: "Længdegrad: Øst er positiv, vest er negativ."
+      tag-latitude-north-is-positive-south-is-negative: "Breddegrad: Nord er positiv, syd er negativ."
+  si-prefixes-converter:
+    title: SI-præfikser konverter
+    description: Konverter mellem metriske præfikser
+    texts:
+      label-quetta-q: quetta (Q)
+      label-ronna-r: Ronna (R)
+      label-yotta-y: yotta (Y)
+      label-zetta-z: zetta (Z)
+      label-exa-e: exa (E)
+      label-peta-p: kort (P)
+      label-tera-t: tera (T)
+      label-giga-g: giga (G)
+      label-mega-m: mega (M)
+      label-kilo-k: kilo (k)
+      label-hecto-h: hekto (h)
+      label-deca-da: ti (fra)
+      label-unit: enhed
+      label-deci-d: så (d)
+      label-centi-c: centi (c)
+      label-milli-m: national (m)
+      label-micro-µ: mikro (µ)
+      label-nano-n: nano (n)
+      label-pico-p: pico (p)
+      label-femto-f: femto (f)
+      label-atto-a: handling (a)
+      label-zepto-z: zepto (z)
+      label-yocto-y: yocto (y)
+      label-ronto-r: ronto (r)
+      label-quecto-q: Jeg er sulten.
+      label-auto: Bil
+      label-fixed: Fast
+      label-exponential: Eksponentiel
+      label-convert: "Konvertere:"
+      label-mode: "Mode:"
+      label-decimals: "Decimaler:"
+      label-thousand-separators: "Tusindseparatorer:"
+      label-to: "Til:"
+      tag-: =
 about:
   alltools-title: Alle {toolsCount} værktøjer
   tools:

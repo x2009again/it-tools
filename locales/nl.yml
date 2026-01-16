@@ -791,6 +791,7 @@ tools:
       label-your-url-to-parse: "Uw url om te parsen:"
       placeholder-your-url-to-parse: Uw url om te parseren...
       url-must-have-http-or-https-prefix: Url moet het voorvoegsel http:// of https:// hebben
+      button-open-url: URL openen
   iban-validator-and-parser:
     title: IBAN validator en parser
     description: Valideer en parseer IBAN-nummers. Controleer of een IBAN geldig is
@@ -861,6 +862,9 @@ tools:
       placeholder-your-string: Jouw snaar...
       label-cleaning-regex: "Regex opschonen:"
       placeholder-your-cleaning-regex: Uw schoonmaak regex...
+      label-titlecase: "Titelcase:"
+      label-spongecase: "Spongecase:"
+      label-swapcase: "Swapcase:"
   html-entities:
     title: HTML-entiteiten
     description: Escape of unescape HTML-entiteiten (vervang tekens zoals <, >, &, "
@@ -945,6 +949,8 @@ tools:
       placeholder-your-lorem-ipsum: Jouw lorem ipsum...
       tag-copy: Kopiëren
       tag-refresh: Vernieuwen
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: Afdrukken (d.w.z. een
+        PDF-printer gebruiken om een PDF-bestand te verkrijgen)
   qrcode-generator:
     title: QR-code generator
     description: Genereer en download een QR-code voor een URL (of gewoon platte
@@ -1033,6 +1039,7 @@ tools:
       tag-hey: Hoi!
       tag-welcome-to-this-html-wysiwyg-editor: Welkom bij deze HTML WYSIWYG-editor
       tag-click-here-to-paste-or-edit-raw-html: Klik hier om onbewerkte HTML te plakken of te bewerken
+      label-xhtmlfy: "XHtml:"
   yaml-to-toml:
     title: YAML naar TOML
     description: Parse en converteer YAML naar TOML.
@@ -1079,6 +1086,13 @@ tools:
       label-secret-or-public-key-spki-or-jwk: Geheime of openbare sleutel (SPKI of JWK)
       placeholder-put-your-secret-or-public-key-here: Vul hier uw geheime of openbare sleutel in...
       tag-signature-verified: Handtekening geverifieerd
+      label-jwk: JWK-sleutel
+      label-pub-key: PEM openbare sleutel
+      label-secret-raw-text: Geheim - Ruwe tekst
+      label-secret-hex-array: Geheim - Hex-array
+      label-secret-base64: Geheim - Base64
+      label-secret-encoding: "Geheime codering/type:"
+      key-or-secret-or-verification-error-e-tostring: "Sleutel of geheim of verificatiefout: {0}"
     constants:
       text:
         token-introspection-response: Token introspectie reactie
@@ -1479,8 +1493,14 @@ tools:
       placeholder-your-string-to-compare: Uw tekenreeks om te vergelijken...
       label-your-hash: "Jouw hash:"
       placeholder-your-hash-to-compare: Jouw hash om te vergelijken...
-      label-do-they-match: Passen ze bij elkaar?
       tag-copy-hash: Kopieer hash
+      hashed-string: Gehashte string
+      comparison-result: Vergelijkingsresultaat
+      matched: Overeenkomend
+      no-match: Geen match
+      timed-out-after-timeout-period: Time-out na {timeoutPeriod}
+      hashed-in-elapsed-period: Gehasht in {elapsedPeriod}
+      compared-in-elapsed-period: Vergeleken in {elapsedPeriod}
   json-to-javascript:
     title: JSON naar JS-converter
     description: Converteer eenvoudig JSON naar een Javascript-object met deze live
@@ -1869,6 +1889,7 @@ tools:
       tag-: "', '"
       tag-copy-html-formatted: Kopieer HTML geformatteerd
       tag-copy-code-text: Kopieer codetekst
+      tag-copy-html-word: Kopieer naar HTML/opgemaakte tekst in Word
   coin-flipper:
     title: Muntengooier
     description: Gooi een muntje op
@@ -2273,9 +2294,8 @@ tools:
       tag-detach-d: Losmaken (-d)
       tag-remove-rm: Verwijder (--rm)
       tag-long-arguments: Lange argumenten
-      tag-: "?"
-      tag-arg: arg
-      tag-value: waarde
+      tag-multiline: Meerdere regels
+      tag-equal-sep: --arg=waarde
   docker-compose-to-kubernetes:
     title: Docker compose naar Kubernetes
     description: Docker Compose naar Kubernetes-manifesten
@@ -2587,6 +2607,14 @@ tools:
       placeholder-your-html-content: Uw HTML-inhoud...
       label-your-html-to-convert-can-paste-from-clipboard: "Uw HTML om te converteren (u kunt deze plakken vanuit het klembord):"
       label-output-markdown: "Uitvoerprijsverlaging:"
+      label-heading-style: "Koppen Stijl:"
+      label-emphasis-style: "Nadrukstijl:"
+      label-hash: Hekje (#)
+      label-underline: Onderstrepen (=/-)
+      label-surround-heading: Omringen (= Kop =)
+      label-asterisk: Asterisk (*)
+      label-underscore: Onderstrepingsteken (_)
+      label-tilde: Tilde (~)
   ical-parser:
     title: ICAL-bestandsparser
     description: ICAL/ICS-bestand parseren naar gebeurtenisweergave
@@ -2870,6 +2898,15 @@ tools:
     texts:
       label-current-selected-node-jsonpath: "Huidig geselecteerd knooppunt JSONPath:"
       label-your-edited-json: "Uw bewerkte JSON:"
+      title-the-following-errors-occured: De volgende fouten zijn opgetreden.
+      tag-validation-successful: Validatie geslaagd!
+      label-no-validation: Geen validatie
+      label-custom: Aangepast
+      label-json-schema: "JSON-schema:"
+      placeholder-paste-your-json-schema-here: Plak hier je JSON-schema...
+      title-schema-validation-errors: Schemavalidatiefouten
+      label-indent-size-0-compact: "Inspringgrootte (0 = Compact):"
+      repair-json: JSON repareren
   json-escaper:
     title: Json Escaper/Unescaper
     description: JSON-string ontsnappen en ontvluchten
@@ -2897,6 +2934,8 @@ tools:
       title-schema-validation-errors: Schemavalidatiefouten
       title-formatted-version: Geformatteerde versie
       label-indent-size-0-compact: "Inspringingsgrootte (0 = Compact):"
+      title-repaired-version: Automatisch gerepareerde en geformatteerde versie
+      label-auto-repair-json: "Autoreparatie JSON:"
   json-size-analyzer:
     title: Json-grootte-analysator
     description: Meet de relatieve gewichten van JSON-knooppunten
@@ -3002,6 +3041,17 @@ tools:
       label-public-key-jwk: "Publieke sleutel (JWK):"
       label-private-key-jwk: "Privésleutel (JWK):"
       title-generated-jwt-token: "Gegenereerde JWT-token:"
+      label-secret-encoding: "Geheime codering:"
+      label-raw-text: Ruwe tekst
+      label-hex-array: Hex-array
+      verify-description: "{0}: {1} (controleer met {2})"
+      token-secret: Tokengeheim
+      token-keys: Tokensleutels
+      cannot-parse-secret-as-encoding: "Kan '{0}' niet parseren als '{1}': {2}"
+      invalid-base64-string: Ongeldige Base64-tekenreeks
+      placeholder-input-token: Plak uw JWT-token om te bewerken...
+      click-to-input-a-existing-jwt-token-to-modify: Klik om een bestaand JWT-token in te voeren om te wijzigen
+      label-base64: Base64
   length-converter:
     title: Lengte-eenheden converter
     description: Waarden omzetten van lengte-eenheden
@@ -3060,6 +3110,8 @@ tools:
       placeholder-select-the-target-unit: Selecteer de doeleenheid
       title-result: Resultaat
       label-best-target-unit: Beste doelwiteenheid
+      label-selected-target-unit-outputunit: Geselecteerde doeleenheid ({0})
+      title-other-units-conversion-tools: Andere hulpmiddelen voor het omrekenen van eenheden
   markdown-cheatsheet:
     title: Markdown-spiekbriefje
     description: Markdown-spiekbriefje
@@ -4897,6 +4949,8 @@ tools:
       message-this-date-is-invalid-for-this-format: Deze datum is ongeldig voor dit formaat
       placeholder-put-your-date-string-here: Voer hier uw datumreeks in...
       placeholder-invalid-date: Ongeldige datum...
+      button-add-timezone: Tijdzone toevoegen
+      placeholder-select-timezone: Selecteer een tijdzone...
   extract-text-from-html:
     texts:
       message-provided-html-is-not-valid: De opgegeven HTML is niet geldig.
@@ -5645,6 +5699,8 @@ tools:
       label-merged-ical: Samengevoegde ICAL
       tag-delete: Verwijderen
       tag-merge-ical-files: iCal-bestanden samenvoegen
+      file-to-merge-file-name: "Te combineren bestand: {0}"
+      download-merged-ical: Download samengevoegde iCal-bestanden
     service:
       text:
         no-icals-parsed-successfully: Geen icals succesvol geparseerd
@@ -5706,6 +5762,12 @@ tools:
       heading-1: Kop 1
       inline-code: Inline-code
       strike: Staking
+      heading-5: Kop 5
+      text-left: Links uitlijnen
+      text-center: Centreren
+      text-right: Rechts uitlijnen
+      text-justify: Uitlijnen Rechtvaardigen
+      clear-align: Duidelijke uitlijning
   unicode-formatter:
     title: Unicode-formatter
     description: Tekst opmaken met Unicode-lettertypen
@@ -5906,6 +5968,7 @@ tools:
       label-json-schema: "JSON-schema:"
       placeholder-paste-your-json-schema-here: Plak hier uw JSON-schema...
       title-schema-validation-errors: Schemavalidatiefouten
+      label-unescape-json-string: "Ontsleutel JSON-string:"
     text:
       provided-json-is-not-valid: Mits JSON niet geldig is.
       try-again-with-repairjsonlabel: Probeer het opnieuw met "{0}"
@@ -7067,6 +7130,598 @@ tools:
       label-converted-to-hex-array: "Geconverteerd naar Hex-array:"
       tag-digit-0-no-grouping: (Cijfer 0 = Geen groepering)
       tag-digit-0-no-row: (Cijfer 0 = Geen rij)
+  toon-to-json:
+    texts:
+      message-provided-json-is-not-valid: Mits TOON niet geldig is
+      output-label-json-version: "JSON-versie van uw TOON-inhoud:"
+      input-placeholder-paste-your-raw-toon-here: Plak hier je onbewerkte TOON-inhoud...
+      input-label-your-raw-toon: "Jouw onbewerkte TOON-inhoud:"
+    title: TOON naar JSON
+    description: Converteer TOON-representatie naar JSON-object voor LLM-gebruik
+  json-to-toon:
+    texts:
+      message-provided-json-is-not-valid: Mits JSON niet geldig is.
+      input-placeholder-paste-your-raw-json-here: Plak hier uw onbewerkte JSON...
+      input-label-your-raw-json: "Uw onbewerkte JSON:"
+      output-label-toon-version-of-your-json: "TOON-versie van uw JSON:"
+    title: JSON naar TOON
+    description: Converteer JSON-object naar TOON-representatie voor LLM/GPT-gebruik
+  external-link-goto: "Om deze tool te openen, volgt u deze link:"
+  argon2-hash:
+    title: Argon2 Hasher
+    description: Argon2-hashes berekenen met parameters
+    texts:
+      label-argon2id: Argon2id
+      label-argon2i: Argon2i
+      label-argon2d: Argon2d
+      label-hex: Hex
+      label-encoded: Gecodeerd
+      label-binary: Binair
+      label-algorithm: "Algoritme:"
+      label-password: "Wachtwoord:"
+      placeholder-enter-password: Voer wachtwoord in
+      label-salt-hex: "Zout (hex):"
+      placeholder-optional-hex-salt: Optioneel hex-zout
+      label-iterations: "Iteraties:"
+      label-memory-kib: "Geheugen (KiB):"
+      label-parallelism: "Parallelisme:"
+      label-hash-length: "Hashlengte:"
+      label-output-type: "Uitvoertype:"
+      title-argon2-hash: Argon2-hash
+      tag-generate: Genereren
+  binary-calculator:
+    title: Binaire rekenmachine
+    description: Bereken bitgewijze/binaire bewerkingen (AND, OR, XOR, NOT, shifts)
+      tussen twee getallen
+    texts:
+      label-decimal: Decimale
+      label-hexadecimal: "Hexadecimaal:"
+      label-octal: "Octaal:"
+      label-binary: "Binair:"
+      label-a-and-b: A EN B
+      label-a-or-b: A OF B
+      label-a-xor-b: Een XOR B
+      label-not-a: GEEN
+      label-a-b-left-shift: A << B (Linker Shift)
+      label-a-b-right-shift: A >> B (Rechter Shift)
+      message-number-is-invalid: Nummer is ongeldig
+      label-a: A=
+      placeholder-enter-a: Voer A in
+      label-b: B=
+      placeholder-enter-b: Voer B in
+      label-operation: "Werking:"
+      placeholder-select-operation: Selecteer bewerking
+      title-result: Resultaat
+      label-decimal-signed: "Decimaal (ondertekend):"
+      label-decimal-unigned: "Decimaal (onduidelijk):"
+      title-bitmask: Bitmasker
+  chmod-memo:
+    title: chmod Commando Spiekbriefje
+    description: Spiekbriefjes voor wijzigingen in Linux-machtigingen
+  css-gradient-generator:
+    title: CSS-verloopgenerator
+    description: Genereer CSS Gradient css-code voor een gegeven set stappen en kleuren
+    texts:
+      label-gradient-type: "Verlooptype:"
+      label-angle-degrees: "Hoek (graden):"
+      title-color-stops: Kleur stopt
+      title-preview: Voorvertoning
+      title-generated-css: Gegenereerde CSS
+      tag-linear: Lineair
+      tag-radial: Radiaal
+      tag-remove: Verwijderen
+      tag-add-color-stop: Kleurstop toevoegen
+  css-units-converter:
+    title: CSS-eenhedenconverter
+    description: Waarden converteren van gangbare CSS-eenheden (em, rem, px, vw, vh, %)
+    texts:
+      label-pixels-px: Pixels (px)
+      label-ems-em: Ems (em)
+      label-rems-rem: Rems (rem)
+      label-percent: Procent (%)
+      label-viewport-width-vw: Viewportbreedte (vw)
+      label-viewport-height-vh: Viewporthoogte (vh)
+      label-value-to-convert: "Te converteren waarde:"
+      label-from-unit: "Van eenheid:"
+      label-to-unit: "Naar eenheid:"
+      label-base-font-size-px: Basislettergrootte (px)
+      label-viewport-width-px: Viewportbreedte (px)
+      label-viewport-height-px: Viewporthoogte (px)
+      title-conversion: Conversie
+      label-converted-value: "Geconverteerde waarde:"
+  docker-compose-to-env-file:
+    title: Docker Compose naar .env-bestand
+    description: .env-bestand uit een bestaand Docker Compose-bestand extraheren
+    texts:
+      label-docker-compose-file: "Docker Compose-bestand:"
+      placeholder-paste-your-docker-compose-yaml-here: Plak hier uw docker-compose YAML...
+      title-extract-env: .env extraheren
+  emv-tlv-decoder:
+    title: EMV TLV-decoder
+    description: Decodeert de EMV TLV (tag-lengte-waarde) gegevens en de
+      afzonderlijke tags met uitgebreide betekenis (zoals TVR (Tag 95),
+      Terminale mogelijkheden (Tag 9F33), enz.)
+    texts:
+      tag-: —
+      tag-tag: Label
+      tag-length: Lengte
+      tag-value: Waarde
+      tag-description: Beschrijving
+      tag-bit-level-interpretation: Bit-Level Interpretatie
+      label-tlv-hex-input: TLV Hex-ingang
+      placeholder-paste-emv-tlv-hex-string-e-g-6f1a8407a0000000031010a50f500b5649534120435245444954:
+        Plak EMV TLV hex-tekenreeks (bijv.
+        6F1A8407A0000000031010A50F500B5649534120435245444954)
+      label-kernel-type: "Kerneltype:"
+      title-decoded-emv-tags: Gedecodeerde EMV-tags
+      tag-parse-tlv: TLV parseren
+  eth-transaction-decoder:
+    title: ETH-transactiedecoder
+    description: Ethereum-transactiedecoder met Smart Contract ABI
+    texts:
+      label-smart-contract-abi: "ABI van slimme contracten:"
+      placeholder-paste-abi-json-here: Plak hier ABI JSON
+      label-raw-transaction-0x-or-json-transaction: "Ruwe transactie (0x...) of JSON-transactie:"
+      title-decoded-transaction: Gedecodeerde transactie
+      label-from: Van
+      label-to: Naar
+      label-value: Waarde
+      label-gas: Gas
+      label-gas-price: Gasprijs
+      label-nonce: Nonce
+      label-method: Methode
+      label-signature: Handtekening
+      label-arguments: Argumenten
+      title-structured-output-json: Gestructureerde uitvoer JSON
+      placeholder-quot-to-quot-quot-0x-quot-quot-data-quot-quot-0x-quot-or-raw-0x:
+        "{'{'}&quot;to&quot;:&quot;0x...&quot;,&quot;data&quot;:&quot;0x...&quo\
+        t;{'}'} of ruwe 0x...."
+  file-splitter:
+    title: Bestandssplitter
+    description: Splits JSON, XML of tekstbestand per groep knooppunten of per groep lijnen
+    texts:
+      placeholder-strategy-value: Strategiewaarde...
+      title-drag-and-drop-a-txt-json-or-xml-file-here-or-click-to-select-a-file:
+        Sleep hier een TXT-, JSON- of XML-bestand naartoe of klik om een bestand
+        te selecteren
+      tag-split-by-lines: Gesplitst per regel
+      tag-split-by-nodes: Gesplitst per knooppunt
+      tag-max-chunk-size-kb: "Maximale brokgrootte (KB):"
+      tag-fixed-count: "Vaste telling:"
+      tag-chunk-count: "Aantal stukken:"
+      tag-preview-chunks: Voorbeeldfragmenten?
+      tag-process-chunks: Verwerk stukken
+      tag-download-all: Alles downloaden
+      tag-download: Download
+  gitignore-generator:
+    title: GitIgnore-generator
+    description: Genereer .gitignore voor een set algemene sjablonen
+    texts:
+      placeholder-select-templates-e-g-node-python-vue: Selecteer sjablonen (bijv. Node, Python, Vue)
+      title-gitignore: .gitignore
+      tag-generate: Genereren
+  i-and-l-checker:
+    title: I en L-controleur
+    description: Controleer een wachtwoord of tekst met markering van 1, l, I, 0, O
+    texts:
+      label-text-to-check: "Te controleren tekst:"
+      placeholder-paste-your-text-here: Plak hier uw tekst...
+      title-legend: Legende
+      tag-i: I
+      tag-uppercase-letter-i: "- Hoofdletter i"
+      tag-l: ik
+      tag-lowercase-letter-l: "- Kleine letter L"
+      tag-1: "1"
+      tag-number-1: "- Nummer 1"
+      tag-0: "0"
+      tag-number-0: "- Nummer 0"
+      tag-o: DE
+      tag-uppercase-letter-o: "- Hoofdletter O"
+  ipv4-subnets-list:
+    title: IPv4-subnetlister
+    description: Maak een lijst van alle mogelijke subnetten van een gegeven CIDR
+    texts:
+      message-we-cannot-parse-this-address-check-the-format: We kunnen dit adres niet verwerken, controleer het formaat
+      label-an-ipv4-address-with-or-without-mask-cidr-ip-range-wildcard-ip-ip-mask:
+        Een IPv4-adres met of zonder masker
+        (CIDR/IP-bereik/Wildcard-IP/IP-masker)
+      placeholder-ipv4-or-cidr: IPv4 of cidr...
+      tag-network: Netwerk
+      tag-first-ip: Eerste IP
+      tag-last-ip: Laatste IP
+      tag-broadcast: Uitzending
+  json-to-msgpack:
+    title: JSON naar MessagePack
+    description: Converteer JSON naar MessagePack
+    texts:
+      message-json-is-invalid: JSON is ongeldig
+      label-output-filename: "Uitvoerbestandsnaam:"
+      placeholder-enter-output-filename: Voer de uitvoerbestandsnaam in
+      label-json-to-convert: "JSON om te converteren:"
+      placeholder-enter-json-to-convert: Voer JSON in om te converteren...
+      title-msgpack-binary: "MsgPack Binair:"
+      tag-convert: Overzetten
+      tag-download-msgpack-file: MsgPack-bestand downloaden
+  markdown-lorem-ipsum:
+    title: Markdown Lorem Ipsum
+    description: Genereer Lorem Ipsum in afwaardering
+    texts:
+      label-atx: "ATX (#, ##, ###)"
+      label-setext: Setext (====, ----)
+      label-unordered: Ongeordend (-, *, +)
+      label-ordered-1-2-3: Geordend (1., 2., 3.)
+      label-language: "Taal:"
+      label-blocks: "Blokken:"
+      label-sentences-per-paragraph: "Zinnen per alinea:"
+      title-styles: Stijlen
+      label-block-types: "Bloktypes:"
+      label-inline-styles: Inline-stijlen
+      label-header-style: "Koptekststijl:"
+      label-list-style: "Lijststijl:"
+      title-block-frequencies: Blokfrequenties
+      label-headers: "Kopteksten:"
+      label-lists: "Lijsten:"
+      label-code: "Code:"
+      label-quotes: "Citaten:"
+      title-generated-markdown: Gegenereerde Markdown
+      tag-headers: Kopteksten
+      tag-lists: Lijsten
+      tag-code: Code
+      tag-quotes: Citaten
+      tag-emphasis: Nadruk
+      tag-strong: Sterk
+      tag-links: Links
+      tag-inline-code: Inline-code
+      tag-generate: Genereren
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: Afdrukken (d.w.z. een
+        PDF-printer gebruiken om een PDF-bestand te verkrijgen)
+  msgpack-to-json:
+    title: Berichtenpakket naar JSON
+    description: Converteer MessagePack-bestand naar JSON
+    texts:
+      title-input-message-pack-file-or-content: Input Message Pack-bestand of inhoud
+      label-file: Bestand
+      label-hex-content: "Hex-inhoud:"
+      title-drag-and-drop-msgpack-file-here-or-click-to-select-a-file: Sleep het MsgPack-bestand hierheen of klik om een bestand te selecteren
+      title-json-content: JSON-inhoud
+  pdf-compressor:
+    title: PDF-compressor
+    description: Optimaliseer en comprimeer PDF met Ghostscript
+    texts:
+      label-screen-smallest: Scherm (kleinste)
+      label-ebook-balanced: eBook (gebalanceerd)
+      label-printer-high-quality: Printer (hoge kwaliteit)
+      label-prepress-best-quality: Prepress (beste kwaliteit)
+      label-pdf-1-4: PDF 1.4
+      label-pdf-1-5: PDF 1.5
+      label-pdf-1-6: PDF 1.6
+      label-pdf-1-7: PDF 1.7
+      label-compression-quality: "Compressiekwaliteit:"
+      placeholder-select-compression-quality: Selecteer compressiekwaliteit
+      label-compatibility-level: "Compatibiliteitsniveau:"
+      placeholder-select-compatibility-level: Selecteer compatibiliteitsniveau
+      title-drag-and-drop-a-pdf-file-here-or-click-to-select-a-file: Sleep een PDF-bestand hierheen of klik om een bestand te selecteren
+      title-logs: Logboeken
+      label-ghostscript: Spookscript
+  serial-console:
+    title: Seriële poortconsole
+    description: Maak verbinding, lees en verstuur berichten naar de seriële poort
+    texts:
+      label-9600: "9600"
+      label-19200: "19200"
+      label-38400: "38400"
+      label-57600: "57600"
+      label-115200: "115200"
+      label-lf-n: LF (\\n)
+      label-cr-r: CR (\\r)
+      label-crlf-r-n: CRLF (\\r\\n)
+      title-serial-terminal: Seriële terminal
+      placeholder-baud-rate: Baudsnelheid
+      placeholder-line-ending: Regeleinde
+      placeholder-select-port: Selecteer poort
+      placeholder-type-a-command: Typ een opdracht...
+      tag-connect: Verbinden
+      tag-disconnect: Loskoppelen
+      tag-send: Versturen
+  shamirs-secret-sharing:
+    title: Shamirs geheime delen
+    description: Toestaan om een geheim te delen en opnieuw samen te stellen met
+      behulp van Shamir\
+    texts:
+      label-text: Tekst
+      label-hexadecimal: Hexadecimaal
+      label-base64: Base64
+      label-secret-mode: "Geheime modus:"
+      title-share-a-secret-split: Een geheim delen (splitsen)
+      label-secret: "Geheim:"
+      placeholder-enter-secret-text: Voer geheime tekst in
+      label-threshold-minimum-shares-to-recover: "Drempel (minimum te recupereren aandelen):"
+      label-number-of-shares: "Aantal aandelen:"
+      title-generated-shares: Gegenereerde aandelen
+      title-recombine-a-secret: Hercombineer een geheim
+      label-your-shares: "Uw aandelen:"
+      placeholder-paste-your-shares-here: Plak hier uw shares...
+      title-recombined-secret: Gerecombineerd geheim
+      tag-split-secret: Gespleten geheim
+      tag-recombine: Recombineren
+  short-urls-expander:
+    title: Korte URL's Expander
+    description: Breid korte URL's uit om volledige URL's te targeten
+    texts:
+      label-short-urls-to-expand: "Korte URL's om uit te breiden:"
+      placeholder-enter-short-urls-one-per-line: Voer korte URL's in (één per regel)
+      title-result: Resultaat
+      tag-expand-all: Alles uitvouwen
+      tag-download-resuls-as-csv: Resultaten downloaden als CSV
+      tag-short-url: Korte URL
+      tag-expanded-url: Uitgebreide URL
+      tag-link: Link
+      tag-status: Status
+      tag-open-url: Open URL
+      cors-anywhere-configuration: CORS Anywhere-configuratie
+      self-hosted-cors-anywhere: Zelf gehoste CORS Anywhere
+      this-tools-requires-a-cors-anywhere-instance-to-bypass-cors-policy-you-can-use-a:
+        Deze tool vereist een CORS Anywhere-instantie om het CORS-beleid te
+        omzeilen. U kunt een
+      put-your-cors-anywhere-instance-url: Voer hier de URL van uw CORS Anywhere-instantie in...
+      cors-anywhere-instance-url: "CORS Anywhere-instantie-URL:"
+      expanded-url: Uitgebreide URL
+      short-url: Korte URL
+      failed-to-expand-some-urls: Het is niet gelukt om sommige URL's uit te breiden.
+      failed: Mislukt
+      no-redirect: Geen omleiding
+      expanded: Uitgebreid
+  amortization-calculator:
+    title: Amortisatiecalculator
+    description: Bereken aflossingsschema's voor leningen met een overzicht van de
+      maandelijkse betalingen.
+    footer: Amortisatiecalculator
+    texts:
+      title-loan-parameters: Leningparameters
+      title-overview: Overzicht
+      title-amortization-schedule: Amortisatieschema
+      label-loan-amount: Leningbedrag
+      label-loan-term: Leentermijn
+      label-interest-rate: Rente
+      label-displayed-currency: Weergegeven valuta
+      label-end-of-year: Einde van het jaar {year}
+      label-year: Jaar
+      label-month: Maand
+      label-interest: Interesse
+      label-principal: Voornaam
+      label-ending-balance: Eindsaldo
+      label-monthly-payment: Maandelijkse betaling
+      label-total-of-payments: Totaal van de betalingen
+      label-total-interest: Totale rente
+      message-loan-amount-must-be-positive: Het leenbedrag moet een positief getal zijn.
+      message-loan-term-must-be-positive-integer: De looptijd van de lening moet een positief geheel getal zijn.
+      message-interest-rate-must-be-between-1-and-100: De rente moet een positieve waarde zijn tussen 0 en 100.
+  copy:
+    text:
+      copied-to-the-clipboard: Gekopieerd naar het klembord
+  arpa-decoder:
+    title: ARPA-decoder
+    description: Decodeer IPv4/6 ARPA-adressen of PTR-records
+    texts:
+      label-arpa-address: "ARPA-adres:"
+      placeholder-e-g-10-1-168-192-in-addr-arpa-or-xxxx-ip6-arpa: bijv. 10.1.168.192.in-addr.arpa. of xxxx.ip6.arpa.
+  database-builder:
+    title: Database-creatiebuilder
+    description: Stel SQL CREATE DATABASE-query's samen voor verschillende databases.
+    texts:
+      label-mysql: MySQL
+      label-postgresql: PostgreSQL
+      label-sql-server: SQL Server
+      label-oracle: Orakel
+      label-sqlite: SQLite
+      label-database-type: "Databasetype:"
+      label-database-name: "Databasenaam:"
+      placeholder-test: test
+      label-server-address: "Serveradres:"
+      placeholder-127-0-0-1: 127.0.0.1
+      label-account: "Rekening:"
+      label-password-leave-empty-to-generate: "Wachtwoord (laat leeg om te genereren):"
+      placeholder-leave-empty-for-random: laat leeg voor willekeurige
+      label-permissions-all-privileges-if-none-selected: "Machtigingen (ALLE RECHTEN als er geen geselecteerd zijn):"
+      title-generated-sql-instructions: "Gegenereerde SQL-instructies:"
+      tag-select: SELECT
+      tag-insert: INVOEGEN
+      tag-update: UPDATE
+      tag-delete: VERWIJDEREN
+      tag-create: CREËREN
+      tag-drop: DRUPPEL
+      tag-alter: WIJZIGEN
+      tag-index: INDEX
+      tag-execute: UITVOEREN
+      tag-references: REFERENTIES
+      tag-trigger: TREKKER
+      tag-usage: GEBRUIK
+      tag-replication-client: REPLICATIECLIENT
+      tag-replication-slave: REPLICATIESLAAF
+      tag-generate-sql-instructions: SQL-instructies genereren
+  database-table-generator:
+    title: Database tabelgenerator
+    description: Genereer SQL CREATE TABLE voor veelgebruikte databases
+    texts:
+      label-mysql: MySQL
+      label-postgresql: PostgreSQL
+      label-sqlite: SQLite
+      label-sql-server: SQL Server
+      label-database-type: "Databasetype:"
+      label-database-name: "Databasenaam:"
+      placeholder-enter-database-name: Voer de databasenaam in
+      placeholder-table-name: Tabelnaam
+      placeholder-column-name: Kolomnaam
+      placeholder-default-value: Standaardwaarde
+      title-generated-sql: Gegenereerde SQL
+      tag-remove-table: Verwijder tabel
+      tag-add-column: Kolom toevoegen
+      tag-nullable: Nullable
+      tag-pk: PK
+      tag-unique: Uniek
+      tag-autoinc: AutoInc
+      tag-add-table: Tabel toevoegen
+      tag-generate-sql: Genereer SQL
+  gitattributes-generator:
+    title: Gitattributengenerator
+    description: Genereer .gitattributes op basis van de algemene configuratie van
+      https://github.com/alexkaratarakis/gitattributes
+    texts:
+      label-gitattributes-templates: "Gitattributes-sjablonen:"
+      placeholder-select-templates: Sjablonen selecteren
+      title-preview: Voorbeeld
+      tag-fetch-generate: Ophalen en genereren
+  html-to-xhtml:
+    title: HTML naar XHTML
+    description: Converteer HTML naar strikte XHTML (XML-parseerbaar, met
+      zelfsluitende tags...).
+    texts:
+      placeholder-your-html-content: Uw HTML-inhoud...
+      label-your-html-to-convert-to-xhtml: "Uw HTML-code omzetten naar XHTML:"
+      label-add-xhtml-xmlns: "XHTML xmlns toevoegen:"
+      label-indentation: "Inspringing:"
+      title-output-xhtml: "Uitvoer XHTML:"
+  javascript-obfuscator:
+    title: Javascript Obfuscator
+    description: JavaScript-code-obfuscator met behulp van base64- of rot13-codering.
+    texts:
+      label-base-64: Basis 64
+      label-rot-13: ROT 13
+      label-obfuscator-io: Obfuscator.io
+      label-your-javascript-code-to-obfuscate: "Uw JavaScript-code die u wilt verbergen:"
+      label-obfuscation-method: "Verhullingsmethode:"
+      title-obfuscted-js-code: Versleutelde JS-code
+      placeholder-enter-your-javascript-code-here: // Voer hier uw JavaScript-code in
+  online-wiktionary:
+    title: Online woordenboek
+    description: Zoek woorden in Wiktionary
+    texts:
+      label-english: Engels
+      label-french: Frans
+      label-german: Duits
+      label-spanish: Spaans
+      label-italian: Italiaans
+      label-russian: Russisch
+      label-chinese: Chinese
+      label-japanese: Japanse
+      label-arabic: Arabisch
+      placeholder-enter-a-word: Voer een woord in…
+      placeholder-select-a-language: Selecteer een taal
+      tag-search-on-wiktionary: Zoeken op Wiktionary
+      tag-enter-a-word-and-select-a-language-to-load-wiktionary: Voer een woord in en selecteer een taal om Wiktionary te laden.
+  ptr-dns-generator:
+    title: PTR DNS-generator
+    description: DNS PTR-records genereren
+    texts:
+      label-ip-address-ipv4-or-ipv6: "IP-adres (IPv4 of IPv6):"
+      placeholder-e-g-192-168-1-10-or-2001-db8-1: bijv. 192.168.1.10 of 2001:db8::1
+  screen-memo:
+    title: Spiekbriefje voor schermopdrachten
+    description: Screen linux command memo
+  svg-previewer:
+    title: SVG-voorbeeldweergave
+    description: Bekijk SVG-bestanden
+    texts:
+      title-upload-a-svg-file: Een SVG-bestand uploaden
+      title-raw-svg-content: "Ruwe SVG-inhoud:"
+      placeholder-paste-raw-svg-content-here: Plak hier de onbewerkte SVG-inhoud...
+      label-select-background: "Selecteer achtergrond:"
+      title-svg-preview: SVG-voorbeeld
+      tag-const-svgcontent-ref: const svgContent = ref
+  tmux-memo:
+    title: Spiekbriefje voor Tmux-opdrachten
+    description: Tmux Linux-opdracht memo
+  trigo-viewer:
+    title: Trigonometrische/vergelijkingscurve-visualisator
+    description: Visualiseer goniometrische vergelijkingen of vergelijkingen
+      afhankelijk van x.
+    texts:
+      text-degrees: Graden (°)
+      text-value: Waarde
+      placeholder-enter-equation-in-terms-of-x-e-g-sin-x-cos-2-x: Voer de vergelijking in termen van x in (bijv. sin(x) + cos(2*x)).
+      label-equation-in-term-of-x: "Vergelijking uitgedrukt in termen van x:"
+      label-domain: "Domein:"
+      tag-reset-zoom: Zoom opnieuw instellen
+  zellij-memo:
+    title: Spiekbrief voor Zellij-commando's
+    description: Zellij linux-opdracht memo
+  dead-pixel:
+    texts:
+      title-dead-pixel-iframe: dead-pixel-iframe
+      tag-: "`;"
+      tag-keyboard-shortcuts: "Toetsenbord sneltoetsen:"
+      tag-arrow-right-arrow-down-space: Pijl naar rechts, pijl naar beneden, spatie
+      tag-next-color: Volgende kleur
+      tag-arrow-left-arrow-up: Pijl naar links, pijl omhoog
+      tag-previous-color: Vorige kleur
+      tag-esc: ESC
+      tag-exit-dead-pixel-mode: ": Verlaat de modus voor dode pixels"
+      tag-start-dead-pixel: Start dode pixel
+  UnitsConverter:
+    texts:
+      exclude-si-prefixes: Sluit SI-voorvoegsels uit.
+    text:
+      si-converter: Ga naar de SI-voorvoegselconverter
+  geo-coordinates-converter:
+    title: Omrekenaar van geografische coördinaten
+    description: Converteer geografische coördinaten tussen WGS84, GCJ02, BD09 en CGCS2000.
+    texts:
+      label-latitude: "Breedte:"
+      label-longitude: "Lengte:"
+      label-csv-content-lng-lat: "CSV-inhoud (Lengtegraad, Breedtegraad):"
+      placeholder-put-your-longitude-and-latitude-in-this-order-csv-to-convert:
+        Voer uw lengte- en breedtegraad (in deze volgorde) in als CSV-bestand om
+        te converteren...
+      title-conversion-results: Conversieresultaten
+      title-notes: Notities
+      tag-wgs84-wsg1984-epsg4326-global-standard: WGS84/WSG1984/EPSG4326 (Wereldwijde standaard)
+      tag-gcj02-amap-gaode-qq-maps: GCJ02/AMap (Gaode, QQ Maps)
+      tag-bd09-bd09ll-bmap-baidu-maps: BD09/BD09LL/BMap (Baidu Maps)
+      tag-bd09mc-bd09meter-baidu-meter: BD09MC/BD09Meter (Baidu-meter)
+      tag-cgcs2000-china-geodetic-system-2000: CGCS2000 (China Geodetic System 2000)
+      tag-webmercator-epsg3857-epsg900913: WebMercator/EPSG3857/EPSG900913
+      tag-convert-single: Converteer enkelvoudig
+      tag-convert-batch: Batch converteren
+      tag-longitude-east-is-positive-west-is-negative: "Lengtegraad: Oost is positief, West is negatief."
+      tag-latitude-north-is-positive-south-is-negative: "Breedtegraad: Noord is positief, Zuid is negatief."
+  si-prefixes-converter:
+    title: SI-voorvoegselomzetter
+    description: Omrekenen tussen metrische voorvoegsels
+    texts:
+      label-quetta-q: Quetta (Q)
+      label-ronna-r: Ronna (R)
+      label-yotta-y: Yotta (Y)
+      label-zetta-z: zetta (Z)
+      label-exa-e: exa (E)
+      label-peta-p: kaart (P)
+      label-tera-t: tera (T)
+      label-giga-g: giga (G)
+      label-mega-m: mega (M)
+      label-kilo-k: kilo (k)
+      label-hecto-h: hecto (h)
+      label-deca-da: tien (van)
+      label-unit: eenheid
+      label-deci-d: dus (d)
+      label-centi-c: centi (c)
+      label-milli-m: nationaal (m)
+      label-micro-µ: micro (µ)
+      label-nano-n: nano (n)
+      label-pico-p: pico (p)
+      label-femto-f: femto (f)
+      label-atto-a: handeling (a)
+      label-zepto-z: zepto (z)
+      label-yocto-y: yocto (y)
+      label-ronto-r: ronto (r)
+      label-quecto-q: Ik heb honger.
+      label-auto: Auto
+      label-fixed: Vast
+      label-exponential: Exponentieel
+      label-convert: "Overzetten:"
+      label-mode: "Modus:"
+      label-decimals: "Decimalen:"
+      label-thousand-separators: "Duizend scheidingstekens:"
+      label-to: "Naar:"
+      tag-: =
 about:
   alltools-title: Alle {toolsCount}-hulpmiddelen
   tools:

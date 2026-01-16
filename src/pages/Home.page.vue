@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IconDragDrop, IconFileDescription, IconHeart } from '@tabler/icons-vue';
+import { IconDragDrop, IconHeart } from '@tabler/icons-vue';
 import { useHead } from '@vueuse/head';
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue';
 import Draggable from 'vuedraggable';
@@ -85,57 +85,55 @@ function stopOrderingFavorites() {
 
 // Batch loading logic for tool cards
 const TOOLS_PER_ROW = 4; // Based on xl:grid-cols-4
-const ROWS_PER_BATCH = 8;
+const ROWS_PER_BATCH = 6;
 const TOOLS_PER_BATCH = TOOLS_PER_ROW * ROWS_PER_BATCH; // 32 tools per batch
 
 const visibleToolsCount = ref(TOOLS_PER_BATCH); // Start with first batch
-let loadingInterval: NodeJS.Timeout | null = null;
+let loadingObserver: IntersectionObserver | null = null;
 
 // Computed property for visible tools
 const visibleTools = computed(() => {
   return toolStore.tools.slice(0, visibleToolsCount.value);
 });
 
-// Function to stop automated loading
-function stopAutomatedLoading() {
-  if (loadingInterval) {
-    clearInterval(loadingInterval);
-    loadingInterval = null;
+// Function to load next batch
+function loadNextBatch() {
+  if (visibleToolsCount.value < toolStore.tools.length) {
+    visibleToolsCount.value = Math.min(
+      visibleToolsCount.value + TOOLS_PER_BATCH,
+      toolStore.tools.length,
+    );
   }
 }
 
-// Function to start automated loading
-function startAutomatedLoading() {
-  // Clear any existing interval
-  if (loadingInterval) {
-    clearInterval(loadingInterval);
-  }
-
-  // Start loading batches every 150ms
-  loadingInterval = setInterval(() => {
-    if (visibleToolsCount.value < toolStore.tools.length) {
-      visibleToolsCount.value = Math.min(
-        visibleToolsCount.value + TOOLS_PER_BATCH,
-        toolStore.tools.length,
-      );
-    }
-    else {
-      // Stop loading when all tools are visible
-      stopAutomatedLoading();
-    }
-  }, 150);
-}
-
-// Start automated loading on component mount
+// Start intersection observer on component mount
 onMounted(() => {
   nextTick(() => {
-    startAutomatedLoading();
+    // Load first batch immediately
+    loadNextBatch();
+
+    // Setup intersection observer for lazy loading
+    const loadingIndicator = document.querySelector('[data-loading-indicator]');
+    if (loadingIndicator) {
+      loadingObserver = new IntersectionObserver(
+        (entries) => {
+          if (entries[0]?.isIntersecting && visibleToolsCount.value < toolStore.tools.length) {
+            loadNextBatch();
+          }
+        },
+        { rootMargin: '200px' },
+      );
+      loadingObserver.observe(loadingIndicator);
+    }
   });
 });
 
 // Clean up on component unmount
 onUnmounted(() => {
-  stopAutomatedLoading();
+  if (loadingObserver) {
+    loadingObserver.disconnect();
+    loadingObserver = null;
+  }
 });
 </script>
 
@@ -154,17 +152,6 @@ onUnmounted(() => {
           {{ $t('home.follow.thankYou') }}
           <n-icon :component="IconHeart" />
         </ColoredCard>
-
-        <a href="https://renderize.tech?utm_source=it-tools&utm_medium=banner" target="_blank" rel="noopener" class="text-current decoration-none">
-          <c-card v-if="config.showSponsorBanner" class="cursor-pointer !border-2px !hover:border-primary">
-            <div class="flex items-center justify-between">
-              <n-icon :component="IconFileDescription" class="text-neutral-400 dark:text-neutral-600" size="40" />
-              <div class="rounded-full bg-#eeeeee px-10px py-2px text-xs text-black dark:bg-#333333 dark:text-white">
-                Sponsor
-              </div>
-            </div>
-          </c-card>
-        </a>
       </div>
 
       <transition name="height">
@@ -212,7 +199,7 @@ onUnmounted(() => {
       </div>
 
       <!-- Loading indicator when more tools are coming -->
-      <div v-if="visibleToolsCount < toolStore.tools.length" mt-6 text-center>
+      <div v-if="visibleToolsCount < toolStore.tools.length" data-loading-indicator mt-6 text-center>
         <div text-14px op-70>
           {{ t('home.loading-more-tools') }} <span>({{ visibleTools.length }}/{{ toolStore.tools.length }})</span>
         </div>
